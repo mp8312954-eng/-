@@ -1,0 +1,138 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi querida Alma 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;padding:20px 0;
+ background:linear-gradient(135deg,#ffe0ed,#fff5fa,#ffd5e6);
+ font-family:Georgia,serif;color:#a64e75;text-align:center;
+}
+.card{
+ width:92%;max-width:460px;margin:auto;padding:23px;
+ background:#fffdfd;border:2px solid #ffc1d8;
+ border-radius:25px;box-shadow:0 8px 25px #e8a4c477;
+}
+h1{color:#e56f9e;font-size:32px}
+p{line-height:1.8}
+.characters{
+ display:flex;justify-content:center;align-items:center;
+ gap:8px;margin:20px 0;
+}
+.characters img{
+ width:30%;max-width:115px;height:120px;
+ object-fit:contain;
+}
+button{
+ border:0;border-radius:25px;padding:13px 20px;
+ margin:10px;background:#ed8eb4;color:white;
+ font-size:15px;font-weight:bold;
+}
+.letter,.surprise{
+ display:none;background:#fff0f6;border:1px dashed #e9a1bd;
+ border-radius:18px;padding:19px;margin-top:18px;
+ line-height:1.9;text-align:left;
+}
+.letter h2,.surprise h2{text-align:center;color:#e56f9e}
+.gift{display:flex;justify-content:center;align-items:center;gap:8px;padding:20px}
+.gift img{width:145px;object-fit:contain}
+.chocolates{
+ width:100px;height:85px;background:#a85c79;
+ border:5px solid #edacc7;border-radius:12px;
+ position:relative;
+}
+.chocolates:before{
+ content:"";position:absolute;left:35px;top:-5px;
+ height:85px;width:17px;background:#ffd0e1;
+}
+.chocolates:after{
+ content:"";position:absolute;top:28px;left:-5px;
+ width:100px;height:15px;background:#ffd0e1;
+}
+.heart{
+ position:fixed;bottom:-30px;animation:up 4s linear forwards;
+ pointer-events:none;
+}
+@keyframes up{to{transform:translateY(-110vh);opacity:0}}
+footer{font-size:12px;margin:25px 0;color:#c783a0}
+</style>
+</head>
+<body>
+<div class="card">
+
+<div style="font-size:25px">🎀 💗 🎀</div>
+<h1>Mi querida Alma</h1>
+<p>Hice algo especial para ti, con muchísimo cariño.</p>
+
+<h3 style="color:#e56f9e">Nuestros Chiikawas</h3>
+
+<div class="characters">
+<img src="https://images.squarespace-cdn.com/content/v1/6670add926f2a64cd00fb0e7/7828ba38-8302-4215-b4e9-2873c2a27ecc/characters%2Bchiikawa%2Bphonetic%2Band%2Bname%2Bcopy.png" alt="Chiikawa">
+</div>
+
+<p>Ahora sí, tengo unas palabritas para ti...</p>
+<button onclick="mostrar('carta')">💌 Abrir mi cartita</button>
+
+<div class="letter" id="carta">
+<h2>Para mi querida Alma 💗</h2>
+Holaaa, mi querida Alma. 💕
+
+Quería dedicarte este pequeño espacio porque eres una personita a la que le tengo muchísimo cariño.
+
+Me alegra mucho poder compartir momentos contigo. Espero que nunca te falten razones para sonreír y que cada día encuentres algo bonito que te haga feliz.
+
+A veces no hacen falta grandes regalos para demostrar cariño. Un pequeño detalle hecho con el corazón también puede significar muchísimo.
+
+Por eso hice esta página, pensando especialmente en ti.
+
+Nunca olvides lo especial que eres y lo mucho que te aprecio.
+
+Te quiero muchísimo, mi querida Alma. 💗
+
+<p style="text-align:center">Con muchísimo cariño para ti. 🎀</p>
+</div>
+
+<button onclick="besitos()">💋 Enviarte besitos</button>
+
+<hr style="border:0;border-top:1px dashed #edb2ca;margin:25px 0">
+
+<h2 style="color:#e56f9e">Una sorpresita para ti 🎁</h2>
+<p>Chiikawa tiene un regalito escondido...</p>
+<button onclick="mostrar('regalo');besitos()">🎀 Descubrir regalo</button>
+
+<div class="surprise" id="regalo">
+<h2>¡Es para ti, Alma!</h2>
+<div class="gift">
+<img src="https://images.squarespace-cdn.com/content/v1/6670add926f2a64cd00fb0e7/7828ba38-8302-4215-b4e9-2873c2a27ecc/characters%2Bchiikawa%2Bphonetic%2Band%2Bname%2Bcopy.png" alt="Chiikawa">
+<div class="chocolates"></div>
+</div>
+<p>Una cajita de bombones para una personita muy especial. 🍫</p>
+<h2>Te quiero muchísimo 💗</h2>
+</div>
+
+<footer>Hecho especialmente para Alma ♡</footer>
+</div>
+
+<script>
+function mostrar(id){
+ document.getElementById(id).style.display="block";
+}
+function besitos(){
+ for(let i=0;i<20;i++){
+  let h=document.createElement("div");
+  h.className="heart";
+  h.textContent=["💗","💕","💋","😘"][Math.floor(Math.random()*4)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize="25px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),5000);
+ }
+}
+</script>
+</body>
+</html>
